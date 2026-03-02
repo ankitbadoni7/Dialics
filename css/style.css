@@ -130,8 +130,9 @@ body {
     grid-template-columns: repeat(3, 1fr); 
     gap: 60px 80px;         /* Row gap and Column gap */
     margin-bottom: 40px;
-    
+    width: 100%;
 }
+
 .feature-item {
     display: flex;
     flex-direction: column;
@@ -159,6 +160,7 @@ body {
     color: #777;
     line-height: 1.5;
     font-weight: 500;
+    
 }
 
 .nav-links .dropdown-panel .discover-link {
@@ -168,6 +170,18 @@ body {
     font-size: 16px;
     display: inline-block;
     margin-top: 20px;
+}
+/* Specific CSS for Resources and Company (4 Columns) */
+.resources-panel .features-grid,
+.company-panel .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    column-gap: 40px; 
+    row-gap: 30px;
+    width: 100%;
+}
+.company-panel {
+    padding-bottom: 1px; 
 }
 
 .nav-actions {
@@ -212,9 +226,9 @@ body {
 .hero h1 span {
     background: linear-gradient(
         90deg,
-        #FE4A97 0%,
-        #FA7A77 50%,
-        #A554EF 100%
+        rgba(169, 32, 146, 0.758) 0%,
+        rgba(250, 122, 119, 1) 50%,
+        rgb(255, 122, 119) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -243,8 +257,6 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    overflow: hidden;
-    
 }
 
 /* Image */
@@ -262,8 +274,9 @@ body {
 .glow {
     position: absolute;
     z-index: 0;
-    filter: blur(90px);
+    filter: blur(50px);
     pointer-events: none;
+   
 }
 
 /* Top Glow */
@@ -271,7 +284,7 @@ body {
     top: -70px;
     left: 50%;
     transform: translateX(-50%);
-    width: 65%;
+    width: 55%;
     height: 55%;
 
     background: radial-gradient(
@@ -283,7 +296,7 @@ body {
 
 /* Left Glow */
 .glow-left {
-    top: 50%;
+    top: 30%;
     left: -90px;
     transform: translateY(-50%);
     width: 45%;
@@ -298,7 +311,7 @@ body {
 
 /* Right Glow */
 .glow-right {
-    top: 50%;
+    top: 30%;
     right: -90px;
     transform: translateY(-50%);
     width: 45%;
@@ -310,6 +323,7 @@ body {
         rgba(229, 68, 114, 0) 100%
     );
 }
+
 .hero-image::after {
     content: "";
     position: absolute;
