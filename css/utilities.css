@@ -3,9 +3,9 @@
     position: relative; 
     background: linear-gradient(
         90deg,
-        #a454efd3 0%,
+        hsl(271, 83%, 63%) 0%,
         #FA7A77 50%,
-        #fe4a98d2 100%
+        #fe4a98 100%
     );
     opacity: 0.9;
     color: #FFFFFF;
@@ -18,6 +18,7 @@
     transition: 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.5);
     overflow: hidden; 
+    font-family: lato;
 }
 
 /* Overlay layer using pseudo-element */
@@ -29,6 +30,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 25px;
+   
 }
 
 /* Hover effect */
@@ -45,6 +47,8 @@
     font-size: 14px;
     color: #444;
     background:transparent;
+     font-family: lato;
+     font-weight: 500;
 }
 .btn-outline:hover{
     border: 1px solid rgba(250, 122, 119, 1);

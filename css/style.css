@@ -11,7 +11,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     background: white;
     color: #111;
 }
@@ -75,6 +75,7 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     z-index: 1000;
     border-top: 2px solid rgba(229, 228, 228, 1);
+    font-family: var(--font-body)
 }
 
 /* display on hover*/
@@ -83,41 +84,61 @@ body {
 }
 
 .panel-container {
-    max-width: 1200px;       /* Aapke main container ki width */
+    max-width: 1200px;      
     margin: 0 auto;
     padding: 0 20px;
 }
-
+/* Feature Title Styling */
 .panel-title {
-    font-size: 14px;
-    letter-spacing: 1px;
+    font-size: 18px;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     position: relative;
     display: inline-block;
+    text-transform: uppercase;
+    
 }
 
-/* Red line under FEATURES */
+/* Gradient line under FEATURES */
 .panel-title::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -10px;
     left: 0;
-    width: 40px;
+    width: 70px;             /* Length of the line */
     height: 2px;
     background: linear-gradient(to right, #ff7a77, #f76b1c);
+}
+
+/* Hollow Circle at the end of the line */
+.panel-title::before {
+    content: '';
+    position: absolute;
+    bottom: -13px;           /* Aligns vertically with the line */
+    left: 70px;              /* Positions exactly at the end of the 50px line */
+    width: 6px;              /* Circle diameter */
+    height: 6px;             /* Circle diameter */
+    border: 2px solid #ff7a77;
+    border-radius: 50%;
+    background: white;
+    z-index: 2;
 }
 
 /* Grid Layout for 3 Columns */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(3, 130px); /* Image jaisa layout */
-    gap: 40px 100px;         /* Row gap and Column gap */
-    margin-bottom: 30px;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 60px 80px;         /* Row gap and Column gap */
+    margin-bottom: 40px;
+    
 }
-
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 .feature-item h4 {
-    font-size: 15px;
+    font-size: 14px;
     color: #222;
     margin-bottom: 8px;
     position: relative;
@@ -127,30 +148,26 @@ body {
 .feature-item h4::after {
     content: '';
     display: block;
-    width: 25px;
+    width: 50px;
     height: 2px;
     background: #ff7a77;
     margin-top: 4px;
 }
 
 .feature-item p {
-    font-size: 13px;
+    font-size: 11.8px;
     color: #777;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: 500;
 }
 
-.discover-link {
+.nav-links .dropdown-panel .discover-link {
     color: #ff7a77;
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
     display: inline-block;
     margin-top: 20px;
-}
-
-.discover-link:hover {
-    text-decoration: underline;
 }
 
 .nav-actions {
@@ -164,6 +181,7 @@ body {
     color: #444;
     font-size: 14px;
     margin-right: 20px;
+    font-weight: 500;
 }
 
 
