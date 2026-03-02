@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #f7f7f9;
+    background: white;
     color: #111;
 }
 
@@ -58,6 +58,99 @@ body {
     gap: 4px;
     text-decoration: none;
     color: inherit;
+}
+.nav-links a:hover{
+    color: rgba(250, 122, 119, 1);
+}
+
+/* Dropdown panel - Full Width Setup */
+.dropdown-panel {
+    display: none; 
+    position: fixed;        
+    top: 80px;              
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 40px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    z-index: 1000;
+    border-top: 2px solid rgba(229, 228, 228, 1);
+}
+
+/* display on hover*/
+.dropdown:hover .dropdown-panel {
+    display: block;
+}
+
+.panel-container {
+    max-width: 1200px;       /* Aapke main container ki width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.panel-title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Red line under FEATURES */
+.panel-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, #ff7a77, #f76b1c);
+}
+
+/* Grid Layout for 3 Columns */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 130px); /* Image jaisa layout */
+    gap: 40px 100px;         /* Row gap and Column gap */
+    margin-bottom: 30px;
+}
+
+.feature-item h4 {
+    font-size: 15px;
+    color: #222;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+/* Red line under Feature Names */
+.feature-item h4::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #ff7a77;
+    margin-top: 4px;
+}
+
+.feature-item p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.discover-link {
+    color: #ff7a77;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.discover-link:hover {
+    text-decoration: underline;
 }
 
 .nav-actions {
