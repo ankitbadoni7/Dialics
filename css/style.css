@@ -37,7 +37,6 @@ body {
 .logo {
     font-weight: 600;
     font-size: 18px;
-    color: #111;
 }
 
 .nav-links ul {
@@ -49,6 +48,16 @@ body {
     cursor: pointer;
     font-family: var(--font-body);
     font-weight: 500;
+    align-items: center;
+}
+
+/* Anchor styling */
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav-actions {
