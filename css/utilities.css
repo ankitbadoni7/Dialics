@@ -1,10 +1,11 @@
 /* ================= BUTTONS ================= */
 .btn-primary {
+    position: relative; 
     background: linear-gradient(
         90deg,
-         #A554EF 0%,
+        #a454efd3 0%,
         #FA7A77 50%,
-        #FE4A97  100%
+        #fe4a98d2 100%
     );
     opacity: 0.9;
     color: #FFFFFF;
@@ -15,13 +16,26 @@
     font-weight: 500;
     display: inline-block;
     transition: 0.3s ease;
-
     border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden; 
 }
 
-.btn-primary:hover {
-    transform: translateY(-3px);
+/* Overlay layer using pseudo-element */
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 25px;
 }
+
+/* Hover effect */
+.btn-primary:hover::before {
+    opacity: 1; 
+}
+
 
 .btn-outline {
     border: 1px solid #ddd;
@@ -31,4 +45,8 @@
     font-size: 14px;
     color: #444;
     background:transparent;
+}
+.btn-outline:hover{
+    border: 1px solid rgba(250, 122, 119, 1);
+    color: rgba(250, 122, 119, 1);
 }
