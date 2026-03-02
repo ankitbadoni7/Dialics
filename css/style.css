@@ -123,6 +123,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
+    overflow: hidden;
     
 }
 
@@ -201,7 +202,7 @@ body {
     to bottom,
     rgba(255,255,255,0) 10%,
     rgba(247,247,249,0.6) 50%,
-    #F7F7F9 80%
+    #F7F7F9 70%
 );
     border-radius: 30px;
     pointer-events: none;
