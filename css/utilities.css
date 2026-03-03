@@ -54,3 +54,7 @@
     border: 1px solid rgba(250, 122, 119, 1);
     color: rgba(250, 122, 119, 1);
 }
+
+.btn{
+    background:rgba(255, 255, 255, 1);
+}

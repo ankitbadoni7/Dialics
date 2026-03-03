@@ -160,7 +160,6 @@ body {
     color: #777;
     line-height: 1.5;
     font-weight: 500;
-    
 }
 
 .nav-links .dropdown-panel .discover-link {
@@ -169,8 +168,9 @@ body {
     font-weight: 500;
     font-size: 16px;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 5px;
 }
+
 /* Specific CSS for Resources and Company (4 Columns) */
 .resources-panel .features-grid,
 .company-panel .features-grid {
@@ -183,6 +183,15 @@ body {
 .company-panel {
     padding-bottom: 1px; 
 }
+
+.resources-panel {
+    padding-bottom: 20px;
+}
+
+.resources-panel .features-grid {
+    margin-bottom: 0; 
+}
+
 
 .nav-actions {
     display: flex;
@@ -284,7 +293,7 @@ body {
     top: -70px;
     left: 50%;
     transform: translateX(-50%);
-    width: 55%;
+    width: 65%;
     height: 55%;
 
     background: radial-gradient(
