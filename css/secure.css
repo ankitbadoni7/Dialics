@@ -1,0 +1,135 @@
+:root {
+    --font-body: 'Lato', sans-serif;
+    --font-heading: 'Noto Serif';
+}
+
+/* SECTION BACKGROUND */
+
+.secure-section{
+    padding:80px 0;
+    background: linear-gradient(
+        to bottom,
+        #f4f4f4 0%,
+        #f4f4f4 50%,
+        #ffffff 50%,
+        #ffffff 100%
+    );
+}
+
+.secure-wrapper{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+/* LEFT TEXT */
+
+.secure-text h1{
+    font-size:60px;
+    font-weight:500;
+    line-height:1.2;
+    margin-bottom:15px;
+    font-family: var(--font-heading);
+}
+.secure-text{
+    transform: translateY(-50px);
+}
+
+
+.gradient-text{
+   background: linear-gradient(264.81deg, #FE4A97 -18.17%, #FA7A77 48.63%, #A554EF 115.42%);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+      font-family: var(--font-heading);
+}
+
+.secure-text p{
+    font-size:12px;
+    color:#777;
+    max-width:480px;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+
+/* CARD */
+
+.secure-card{
+    width:400px;
+    background:#fff;
+    padding:80px 40px 70px 40px; 
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    margin-right: 10px;
+}
+
+
+/* FORM */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    color:#555;
+    margin-bottom:8px;
+}
+
+
+/* INPUT BOX */
+.input-box-form{
+    position: relative;
+    border:1px solid #dcdcdc;
+    border-radius:10px;
+    height:40px;         
+    display:flex;
+    align-items:center;
+    padding:0 45px 0 16px;
+}
+
+.input-box-form input{
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:14px;
+}
+
+.input-box-form img{
+    position:absolute;
+    right:16px;
+    top:50%;
+    transform:translateY(-50%);
+    width:18px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* BUTTON */
+
+.form-btn{
+    width:100%;
+    margin-top:10px;
+}
+
+
+/* NOTE */
+
+.form-note{
+      font-size:14px;
+    text-align:center;
+    margin-top:20px;
+    color:#77777797;
+    font-family: var(--font-body);
+   line-height: 20px;
+}
+
+.form-note a{
+    color:rgba(62, 102, 243, 1);
+    font-family: var(--font-body);
+    font-weight: 500;
+}

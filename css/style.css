@@ -49,6 +49,7 @@ body {
     font-family: var(--font-body);
     font-weight: 500;
     align-items: center;
+    
 }
 
 /* Anchor styling */
@@ -235,7 +236,7 @@ body {
 
 .hero h1 {
     font-size: 60px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.2;
     margin-bottom: 20px;
     font-family: var(--font-heading);
@@ -260,6 +261,7 @@ body {
     font-family: var(--font-body);
     max-width: 350px;   
     line-height: 1.6;
+    font-weight: 500;
 }
 
 .hero-buttons {
@@ -513,10 +515,13 @@ width: 100%;
 }
 
 /* Grid layout */
-.steps-grid {
+.steps-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+
+  max-width: 1070px;   
+  margin: 0 auto;     /* center align */
 }
 
 /* Card */
@@ -534,6 +539,7 @@ width: 100%;
               linear-gradient(90deg, rgba(165, 84, 239, 1) 0%, rgba(250, 122, 119, 1) 50%, rgba(254, 74, 151, 1) 100%) border-box;
 
 }
+
 .step-card:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
@@ -565,10 +571,10 @@ width: 100%;
 
 /* Paragraph */
 .step-card p {
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* CTA Button */
@@ -576,3 +582,332 @@ width: 100%;
   margin-top: 40px;
 }
 
+.how-it-works {
+    padding:200px 0;
+   background-color: #f4f4f4;
+    overflow: hidden;
+}
+
+.steps-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.steps-header h2 {
+    font-family: var(--font-body);
+    font-size: 42px;
+}
+
+.steps-header span {
+    background: linear-gradient(90deg, #A554EF, #FA7A77);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.steps-timeline {
+    position: relative;
+    height: 300px;
+    width: 100%;
+   max-width: 1500px; 
+    margin: 0 auto;
+}
+
+.timeline-path{
+    position: absolute;
+    left: 50%;
+    width: 110%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-step {
+    position: absolute;
+    z-index: 2;
+    width: 250px;
+}
+
+/* Positioning steps along the wave */
+.step-one { top: 60%; left: 0%; }
+.step-two { top: 10%; left: 28%; }
+.step-three { top: 55%; left: 52%; }
+.step-four { top: 15%; left: 78%; }
+
+.cloud-icon {
+    width: 40px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+}
+
+.step-content {
+    position: relative;
+}
+
+.step-number-img {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 90px;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.step-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.step-content p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.step-tag {
+    display: block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fa7a77;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/* ================= CTA SECTION ================= */
+
+.cta-section{
+    padding:50px 0;
+   background: linear-gradient(
+        to bottom,
+         white 50%,
+        #f4f4f4 50%
+    );
+}
+
+/* CTA BOX */
+
+.cta-box{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px;
+    border-radius:22px;
+    position: relative;
+    background:#fff;
+    border:3px solid transparent;
+      border-width:14px 6px 6px 6px;
+     background: linear-gradient(#fff, #fff) padding-box, 
+              linear-gradient(90deg, rgba(165, 84, 239, 1) 0%, rgba(250, 122, 119, 1) 50%, rgba(254, 74, 151, 1) 100%) border-box;
+
+    background-origin:border-box;
+    background-clip:padding-box,border-box;
+     overflow:hidden; 
+    
+}
+
+/* CONTENT */
+
+.cta-content h2{
+    font-size:52px;
+    margin-bottom:20px;
+    font-weight: 500;
+    font-family: var(--font-heading);
+}
+.btn-arrow{
+    width: 16px;
+}
+.demo{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-arrow{
+    width: 14px;
+}
+
+/* IMAGE */
+.cta-image{
+    position:absolute;
+    left: 380px;
+    bottom: -340px;
+}
+
+/* normal sphere */
+.sphere-main{
+    width:1100px;
+    position:relative;
+    z-index:2;
+}
+
+/* blur layer  */
+.sphere-blur{
+    width:1100px;
+    position:absolute;
+    top:5px;
+    right:50px;
+    filter: blur(80px);
+    z-index:1;
+}
+
+
+/* FOOTER  */
+
+.footer {
+  background: #f4f4f4 ;
+ 
+}
+
+.footer-container {
+  width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr 0.8fr;
+  gap: 40px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+}
+
+.footer h3,
+.footer h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 38px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer h3::after,
+.footer h4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 80px;
+    height: 2px;
+    background: #ff5a7a;
+}
+
+.footer h3::before,
+.footer h4::before {
+    content: "";
+    position: absolute;
+    left:80px;
+    bottom: -11px;
+    width: 5px;
+    height: 5px;
+    border: 2px solid #ff5a7a;
+    border-radius: 50%;
+    background: #f7f7f9;
+    z-index: 1;
+}
+
+.footer-newsletter p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 8px 8px;
+  border: 1px solid #e0e0e0;
+  flex: 1;
+}
+
+.input-box input::placeholder{
+    opacity: 0.7;
+}
+.input-box .btnGet {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px; 
+    font-size: 13px;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;  
+}
+
+.input-box img {
+  width: 18px;
+  margin-right: 12px;
+  opacity: 0.6;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  color: #333;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.footer-col ul li a:hover {
+  color: #fa7a77;
+}
+
+.footer-bottom {
+  padding-bottom: 15px ;
+}
+.footer-bottom .bottom-flex p{
+    color: black;
+}
+
+.bottom-flex {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  
+}
+
+.footer-links a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+
+}
+
+.footer-links a:hover {
+  color: blue;
+}

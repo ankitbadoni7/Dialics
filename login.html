@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dialics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <!-- Logo Image -->
+            <div class="logo">
+                <img src="Images/logo.svg" alt="Dialics Logo">
+            </div>
+
+            <nav class="nav-links">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">
+                            Features
+                            <img src="Images/arrow.svg" alt="arrow" class="nav-arrow">
+                        </a>
+                        <div class="dropdown-panel">
+                            <div class="panel-container">
+                                <h3 class="panel-title">FEATURES</h3>
+
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <h4>Call Tacking</h4>
+                                        <p>Use insights to improve marketing strategy</p>
+                                    </div>
+
+                                    <div class="feature-item">
+                                        <h4>Call Routing</h4>
+                                        <p>Never miss a single call with the call routing feature</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Phone Numbers</h4>
+                                        <p>Use different types of virtual phone numbers in your marketing campaigns for
+                                            better results</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Call Reporting</h4>
+                                        <p>Learn the phone call data to boost your conversions</p>
+                                    </div>
+
+                                    <div class="feature-item">
+                                        <h4>Call Attribution</h4>
+                                        <p>Know where your customers come from and how to attract more of them</p>
+                                    </div>
+
+
+                                    <div class="feature-item">
+                                        <h4>Pay Per Call</h4>
+                                        <p>Easily track your pay-per-call campaigns and grow your business network</p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="discover-link">Discover all features ></a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#">Pricing</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#">
+                            Resources
+                            <img src="Images/arrow.svg" alt="arrow" class="nav-arrow">
+                        </a>
+                        <div class="dropdown-panel resources-panel">
+                            <div class="panel-container">
+                                <h3 class="panel-title">RESOURCES</h3>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <h4>Help</h4>
+                                        <p>Use insights to improve marketing strategy</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Blog</h4>
+                                        <p>Use different types of virtual phone numbers <br>in your marketing campaigns
+                                            for
+                                            better results</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>API Documentation</h4>
+                                        <p>Never miss a single call with the call routing feature</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Changelog</h4>
+                                        <p>Learn the phone call data to boost your conversions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#">
+                            Company
+                            <img src="Images/arrow.svg" alt="arrow" class="nav-arrow">
+                        </a>
+                        <div class="dropdown-panel company-panel">
+                            <div class="panel-container">
+                                <h3 class="panel-title">COMPANY</h3>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <h4>About Us</h4>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Contact Us</h4>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Privacy Policy</h4>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Terms & Conditions</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#" class="login">Login</a>
+                <a href="#" class="btn-outline">Book a Demo</a>
+                <a href="#" class="btn-primary">Start Free Trial</a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ================= LOGIN SECTION ================= -->
+    <section class="verify-section">
+        <div class="container verify-wrapper">
+
+            <!-- LEFT TEXT -->
+            <div class="verify-text">
+                <h1 class="gradient-text">Verify</h1>
+
+                <p>
+                    Enter the OTPs sent to your email and phone to complete the verification process.
+                    This quick step ensures your identity and protects your data.
+                </p>
+            </div>
+
+            <!-- FORM CARD -->
+            <div class="verify-card">
+
+                <form>
+                    <!-- EMAIL OTP -->
+                    <div class="form-group">
+                        <label for="email-otp">Email *</label>
+
+                        <div class="otp-group" id="email-otp">
+                            <input type="text" maxlength="1" placeholder="_" inputmode="numeric" pattern="[0-9]"
+                                aria-label="Email OTP digit 1">
+                            <input type="text" maxlength="1" placeholder="_" inputmode="numeric" pattern="[0-9]"
+                                aria-label="Email OTP digit 2">
+                            <input type="text" maxlength="1" placeholder="_" inputmode="numeric" pattern="[0-9]"
+                                aria-label="Email OTP digit 3">
+                            <input type="text" maxlength="1" placeholder="_" inputmode="numeric" pattern="[0-9]"
+                                aria-label="Email OTP digit 4">
+                        </div>
+                    </div>
+
+
+                    <!-- PHONE OTP -->
+                    <div class="form-group">
+                        <label for="phone-otp">Phone Number *</label>
+
+                        <div class="otp-group" id="phone-otp">
+                            <input type="text" maxlength="1" placeholder="_" inputmode="numeric" pattern="[0-9]"
+                                aria-label="Phone OTP digit 1">
+                            <input type="text" maxlength="1" placeholder="_" inputmode="numeric" pattern="[0-9]"
+                                aria-label="Phone OTP digit 2">
+                            <input type="text" maxlength="1" placeholder="_" inputmode="numeric" pattern="[0-9]"
+                                aria-label="Phone OTP digit 3">
+                            <input type="text" maxlength="1" placeholder="_" inputmode="numeric" pattern="[0-9]"
+                                aria-label="Phone OTP digit 4">
+                        </div>
+                    </div>
+
+
+                    <!-- BUTTON -->
+                    <button class="btn-primary form-btn">Next</button>
+
+
+                    <!-- NOTE -->
+                    <p class="form-note">
+                        You have read and agree to our
+                        <a href="#">Privacy Policy</a> and
+                        <a href="#">Terms and Conditions</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= CTA SECTION ================= -->
+
+    <section class="cta-section">
+        <div class="container">
+
+            <div class="cta-box">
+
+                <div class="cta-content">
+                    <h2>
+                        Discover the power of our <br>
+                        all-in-one call tracking<br>
+                        platform.
+                    </h2>
+
+                    <a href="#" class="demo btn-primary">
+                        Request a Demo
+                        <img src="Images/RightArrow.svg" alt="arrow" class="btn-arrow">
+                    </a>
+                </div>
+
+                <div class="cta-image">
+                    <!-- blurred sphere -->
+                    <img src="Images/sphere.png" class="sphere-blur" alt="sphere">
+
+                    <!-- main sphere -->
+                    <img src="Images/sphere.png" class="sphere-main" alt="sphere">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-newsletter">
+                <h3>Subscribe Our Newsletter</h3>
+                <p>Get started for 1 Month free trial No Purchase needed.</p>
+                <div class="newsletter-form">
+                    <div class="input-box">
+                        <img src="images/email.svg" alt="email">
+                        <input type="email" placeholder="Email">
+                        <button class="btnGet btn-primary">Get Started</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Demo</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Features</h4>
+                <ul>
+                    <li><a href="#">Call Tracking</a></li>
+                    <li><a href="#">Call Reporting</a></li>
+                    <li><a href="#">Call Attribution</a></li>
+                    <li><a href="#">Call Routing</a></li>
+                    <li><a href="#">Pay Per Call</a></li>
+                    <li><a href="#">Phone Numbers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Changelog</a></li>
+                    <li><a href="#">Roadmap</a></li>
+                    <li><a href="#">API Documentation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class=" bottom-flex">
+                <p>© 2025 — Copyright</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

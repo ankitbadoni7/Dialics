@@ -1,0 +1,116 @@
+/* SECTION */
+:root {
+    --font-body: 'Lato', sans-serif;
+    --font-heading: 'Noto Serif', serif;
+}
+
+.verify-section{
+     padding:80px 0;
+  background: linear-gradient(
+    to bottom,
+    #f4f4f4 0%,
+    #f4f4f4 53%,
+    #ffffff 53%,
+    #ffffff 100%
+);
+}
+
+.verify-wrapper{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* LEFT TEXT */
+
+.verify-text h1{
+    font-size:60px;
+    margin-bottom:10px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    
+}
+.gradient-text{
+   background: linear-gradient(264.81deg, #FE4A97 -18.17%, #FA7A77 48.63%, #A554EF 115.42%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.verify-text{
+    transform: translateY(5px);
+}
+
+.verify-text p{
+    color:#666;
+    max-width:440px;
+    font-size:12px;
+    font-family: var(--font-body);
+    line-height: 1.5;
+}
+
+/* CARD */
+
+.verify-card{
+    width:400px;
+    background:#fff;
+    padding:60px 40px 50px 40px; 
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    margin-right: 10px;
+}
+
+/* FORM */
+
+.form-group{
+    margin-bottom:30px;
+}
+
+.form-group label{
+    font-size:13px;
+    color:#555;
+    display:block;
+    margin-bottom:8px;
+}
+.otp-group input::placeholder{
+    color:#999;
+    opacity: 0.3;
+    font-size:14px;
+}
+
+/* OTP BOXES */
+
+.otp-group{
+    display:flex;
+    gap:10px;
+}
+
+.otp-group input{
+    width:40px;
+    height:40px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    text-align:center;
+    font-size:16px;
+}
+
+/* BUTTON */
+
+.form-btn{
+    width:100%;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+/* NOTE */
+
+.form-note{
+    font-size:11px;
+    text-align:center;
+    margin-top:10px;
+    color:#777;
+}
+
+.form-note a{
+   color:rgba(62, 102, 243, 1);
+    font-family: var(--font-body);
+    font-weight: 500;
+}

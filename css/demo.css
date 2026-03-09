@@ -1,0 +1,114 @@
+
+:root {
+    --font-body: 'Lato', sans-serif;
+    --font-heading: 'Noto Serif', serif;
+}
+/* ================= REGISTER SECTION ================= */
+
+.register-section{
+    padding:70px 0;
+  background: linear-gradient(
+    to bottom,
+    #f4f4f4 0%,
+    #f4f4f4 48%,
+    #ffffff 48%,
+    #ffffff 100%
+);
+}
+
+.register-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:80px;
+}
+
+/* LEFT TEXT */
+
+.register-text h1{
+    font-size:60px;
+    font-weight:510;
+    line-height:1.2;
+    font-family: var(--font-heading);
+}
+.register-text{
+    transform: translateY(-60px);
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#C850C0,#FF6A88);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.register-text p{
+    margin-top:20px;
+    color:#666;
+    max-width:480px;
+    font-size:12px;
+    font-family: var(--font-body);
+}
+
+/* FORM CARD */
+
+.register-card{
+    background:#fff;
+    padding:40px;
+    border-radius:14px;
+    width:420px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* FORM */
+
+.form-row{
+    display:flex;
+    gap:10px;
+}
+
+.form-group{
+    margin-bottom:35px;
+    width:100%;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    margin-bottom:6px;
+    color:#333;
+    font-weight: 500;
+}
+.form-group input::placeholder{
+    opacity: 0.5;
+}
+
+.form-group input{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ddd;
+    font-size:14px;
+}
+
+.form-btn{
+    width:100%;
+    margin-top:5px;
+}
+
+/* NOTE */
+
+.form-note{
+    font-size:14px;
+    text-align:center;
+    margin-top:20px;
+    color:#77777797;
+    font-family: var(--font-body);
+   line-height: 20px;
+}
+
+.form-note a{
+    color:rgba(62, 102, 243, 1);
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+

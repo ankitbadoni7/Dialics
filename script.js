@@ -59,3 +59,25 @@ window.addEventListener('scroll', () => {
         link.style.color = ''; 
     });
 });
+
+
+//passowrd visiblity
+const toggles = document.querySelectorAll(".toggle-password");
+
+toggles.forEach(icon => {
+
+    const input = icon.previousElementSibling;
+
+    icon.addEventListener("mousedown", () => {
+        input.type = "text";
+    });
+
+    icon.addEventListener("mouseup", () => {
+        input.type = "password";
+    });
+
+    icon.addEventListener("mouseleave", () => {
+        input.type = "password";
+    });
+
+});
