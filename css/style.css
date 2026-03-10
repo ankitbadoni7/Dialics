@@ -1028,9 +1028,14 @@ background-clip: text;
     font-weight: 500;
 }
 
-.faq-subtitle span{
+.contact-link{
     color:#ff6b6b;
-    cursor:pointer;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.contact-link:hover{
+    text-decoration:underline;
 }
 
 /* GRID */
