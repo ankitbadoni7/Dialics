@@ -1349,3 +1349,17 @@ background-clip: text;
 .footer-links a:hover {
   color: blue;
 }
+
+
+/* ================= RESPONSIVE ================= */
+
+
+/* Small Mobile */
+@media (max-width:480px){
+
+
+
+
+
+
+}
