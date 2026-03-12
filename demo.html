@@ -136,8 +136,8 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="#" class="login">Login</a>
-                <a href="#" class="btn-outline">Book a Demo</a>
+                <a href="login.html" class="login">Login</a>
+                <a href="demo.html" class="btn-outline">Book a Demo</a>
                 <a href="#" class="btn-primary">Start Free Trial</a>
             </div>
 
@@ -162,40 +162,41 @@
             </div>
 
             <!-- FORM CARD -->
+            <!-- FORM CARD -->
             <div class="register-card">
-
-                <form>
+                <form action="secure.html">
 
                     <div class="form-row">
                         <div class="form-group">
                             <label>First Name *</label>
-                            <input type="text" placeholder="Type First Name">
+                            <input type="text" placeholder="Type First Name" required>
                         </div>
 
                         <div class="form-group">
                             <label>Last Name *</label>
-                            <input type="text" placeholder="Type Last Name">
+                            <input type="text" placeholder="Type Last Name" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>Email *</label>
-                        <input type="email" placeholder="example@email.com">
+                        <input type="email" placeholder="example@email.com" required>
                     </div>
 
                     <div class="form-group">
                         <label>Phone Number *</label>
-                        <input type="text" placeholder="+1">
+                        <input type="tel" placeholder="+1" inputmode="numeric" pattern="[0-9]{11}" maxlength="11"
+                            required>
+
                     </div>
 
-                    <button class="btn-primary form-btn">Next</button>
 
+                    <button type="submit" class="btn-primary form-btn">Next</button>
                     <p class="form-note">
                         You have read and agree to our
                         <a href="#">Privacy Policy</a> and
                         <a href="#">Terms and Conditions</a>
                     </p>
-
                 </form>
 
             </div>
