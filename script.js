@@ -81,3 +81,38 @@ toggles.forEach(icon => {
     });
 
 });
+
+//HAMBYRGER ICON
+
+// hamburger menu
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', (e) => {
+    navLinks.classList.toggle('active');
+    e.stopPropagation(); // prevent document click from closing immediately
+});
+
+// close nav if clicking outside
+document.addEventListener('click', (e) => {
+
+    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        navLinks.classList.remove('active');
+    }
+
+});
+
+// navbar hide on scroll down
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+        navLinks.classList.remove("active");
+    }
+
+    lastScroll = currentScroll;
+
+});

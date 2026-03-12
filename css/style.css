@@ -23,6 +23,14 @@ body {
 }
 
 /* ================= NAVBAR ================= */
+.hamburger{
+    display:none;
+    cursor:pointer;
+}
+
+.hamburger img{
+    width:28px;
+}
 .navbar {
     padding: 20px 0;
     background: transparent;
@@ -1357,6 +1365,37 @@ background-clip: text;
 /* Small Mobile */
 @media (max-width:480px){
 
+/* show hamburger */
+.hamburger{
+    display:block;
+}
+
+/* hide nav links */
+.nav-links{
+    display:none;
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    background:white;
+    padding:20px;
+}
+
+/* vertical menu */
+.nav-links ul{
+    flex-direction:column;
+    gap:20px;
+}
+
+/* show menu when active */
+.nav-links.active{
+    display:block;
+}
+
+/* hide right buttons */
+.nav-actions{
+    display:none;
+}
 
 
 
