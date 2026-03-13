@@ -15,6 +15,9 @@ body {
     background: white;
     color: #111;
 }
+* {
+    -webkit-tap-highlight-color: transparent; /*Remove the blue highlight in mob*/
+}
 
 /* ================= CONTAINER ================= */
 .container{
@@ -76,11 +79,16 @@ body {
 .mobile-back{
     display: none;
 }
+
 /* Dropdown panel - Full Width Setup */
-.dropdown-panel {
-    display: none; 
-    position: fixed;        
-    top: 80px;              
+.dropdown-panel{
+     opacity:0;
+    transform: translateY(15px);
+    pointer-events:none;
+    transition: all 0.25s ease;
+
+    position: fixed;
+    top: 80px;
     left: 0;
     width: 100%;
     background: white;
@@ -92,8 +100,10 @@ body {
 }
 
 /* display on hover*/
-.dropdown:hover .dropdown-panel {
-    display: block;
+.dropdown-panel.active{
+    opacity:1;
+    transform: translateY(0);
+    pointer-events:auto;
 }
 
 .panel-container {
@@ -1435,6 +1445,15 @@ background-clip: text;
     margin-left: -50px;
     cursor: pointer;
     }
+
+.dropdown-panel{
+opacity: 1;
+    transform: none;
+    pointer-events: auto;
+
+}
+
+    
 /* Features dropdown grid */
 .features-grid{
     grid-template-columns: repeat(2, 1fr); /* 2 columns */

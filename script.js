@@ -13,9 +13,8 @@ dropdowns.forEach(drop => {
         clearTimeout(timer);
         
         if (panel) {
-            panel.style.display = 'block';
-        }
-        
+    panel.classList.add("active");
+}
         if (arrow) {
             arrow.src = 'Images/arrowDown.svg';
         }
@@ -26,9 +25,9 @@ dropdowns.forEach(drop => {
     drop.addEventListener('mouseleave', () => {
         if (window.innerWidth <= 480) return;
         timer = setTimeout(() => {
-            if (panel) {
-                panel.style.display = 'none';
-            }
+          if (panel) {
+    panel.classList.remove("active");
+}
             
             if (arrow) {
                 arrow.src = 'Images/arrow.svg';
@@ -48,8 +47,8 @@ window.addEventListener('scroll', () => {
         const panel = drop.querySelector('.dropdown-panel');
 
         if (panel) {
-            panel.style.display = 'none';
-        }
+    panel.classList.remove("active");
+}
         
         if (arrow) {
             arrow.src = 'Images/arrow.svg';
