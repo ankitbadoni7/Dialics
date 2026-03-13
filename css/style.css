@@ -1359,7 +1359,9 @@ background-clip: text;
 .footer-links a:hover {
   color: blue;
 }
-
+*{
+    outline: 1px solid red;
+}
 /* ================= RESPONSIVE ================= */
 
 /* Small Mobile */
@@ -1414,6 +1416,18 @@ background-clip: text;
 /* hide right buttons */
 .nav-actions{
     display:none;
+}
+.steps-grid{
+grid-template-columns:1fr;
+}
+.faq-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.faq-item{
+    width:100%;
 }
 
 .detail-row{
