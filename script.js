@@ -137,9 +137,12 @@ dropdownItems.forEach(item => {
             e.stopPropagation();
 
             // close any previously open panels
-            document.querySelectorAll(".dropdown-panel").forEach(p=>{
-                p.style.display = "none";
-            });
+// close other panels only
+document.querySelectorAll(".dropdown-panel").forEach(p=>{
+    if(p !== panel){
+        p.style.display = "none";
+    }
+});
 
             // hide all menu items
             allNavLis.forEach(li=>{
