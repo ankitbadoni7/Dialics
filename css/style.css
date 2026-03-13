@@ -1450,7 +1450,7 @@ background-clip: text;
 opacity: 1;
     transform: none;
     pointer-events: auto;
-
+    background:#F6F6F6;
 }
 
     
