@@ -9,9 +9,9 @@ dropdowns.forEach(drop => {
 
     // Show panel + swap arrow + change link color
     drop.addEventListener('mouseenter', () => {
+        if (window.innerWidth <= 480) return;
         clearTimeout(timer);
         
-        // Only proceed if a panel exists for this dropdown
         if (panel) {
             panel.style.display = 'block';
         }
@@ -20,12 +20,11 @@ dropdowns.forEach(drop => {
             arrow.src = 'Images/arrowDown.svg';
         }
         
-        // Set active color to link
         link.style.color = 'rgba(250, 122, 119, 1)'; 
     });
 
-    // Hide everything with a slight delay to ensure stability
     drop.addEventListener('mouseleave', () => {
+        if (window.innerWidth <= 480) return;
         timer = setTimeout(() => {
             if (panel) {
                 panel.style.display = 'none';
@@ -35,11 +34,11 @@ dropdowns.forEach(drop => {
                 arrow.src = 'Images/arrow.svg';
             }
             
-            // Revert link color
             link.style.color = ''; 
         }, 150);
     });
 });
+
 
 // Hide all open panels immediately when the user scrolls
 window.addEventListener('scroll', () => {
@@ -61,7 +60,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-//passowrd visiblity
+// password visibility
 const toggles = document.querySelectorAll(".toggle-password");
 
 toggles.forEach(icon => {
@@ -82,16 +81,16 @@ toggles.forEach(icon => {
 
 });
 
-//HAMBYRGER ICON
 
-// hamburger menu
+// HAMBURGER ICON
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', (e) => {
     navLinks.classList.toggle('active');
-    e.stopPropagation(); // prevent document click from closing immediately
+    e.stopPropagation();
 });
+
 
 // close nav if clicking outside
 document.addEventListener('click', (e) => {
@@ -101,6 +100,7 @@ document.addEventListener('click', (e) => {
     }
 
 });
+
 
 // navbar hide on scroll down
 let lastScroll = 0;
@@ -114,5 +114,86 @@ window.addEventListener("scroll", () => {
     }
 
     lastScroll = currentScroll;
+
+});
+
+
+
+/* ================= MOBILE DROPDOWN & BACK BUTTON ================= */
+
+const dropdownItems = document.querySelectorAll(".nav-links .dropdown");
+const backButtons = document.querySelectorAll(".mobile-back");
+const allNavLis = document.querySelectorAll(".nav-links > ul > li");
+
+dropdownItems.forEach(item => {
+
+    const link = item.querySelector("a");
+    const panel = item.querySelector(".dropdown-panel");
+
+    link.addEventListener("click", function(e) {
+
+        if (window.innerWidth <= 480 && panel) {
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            // close any previously open panels
+            document.querySelectorAll(".dropdown-panel").forEach(p=>{
+                p.style.display = "none";
+            });
+
+            // hide all menu items
+            allNavLis.forEach(li=>{
+                li.style.display = "none";
+            });
+
+            // show current dropdown
+            item.style.display = "block";
+            panel.style.display = "block";
+
+        }
+
+    });
+
+});
+
+
+backButtons.forEach(btn => {
+
+    btn.addEventListener("click", function(e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        // close all panels
+        document.querySelectorAll(".dropdown-panel").forEach(panel=>{
+            panel.style.display = "none";
+        });
+
+        // show all menu items again
+        allNavLis.forEach(li=>{
+            li.style.display = "block";
+        });
+
+    });
+
+});
+
+
+/* FIX: reset menu when scrolling */
+
+window.addEventListener("scroll", () => {
+
+    if(window.innerWidth <= 480){
+
+        document.querySelectorAll(".dropdown-panel").forEach(panel=>{
+            panel.style.display = "none";
+        });
+
+        allNavLis.forEach(li=>{
+            li.style.display = "block";
+        });
+
+    }
 
 });
