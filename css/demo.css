@@ -112,3 +112,39 @@
     font-weight: 500;
 }
 
+@media (max-width:850px) {
+    .register-wrapper {
+        flex-direction: column; /* Stack text and card vertically */
+        align-items: center;    /* Center everything horizontally */
+        gap: 30px;              /* Space between text and card */
+    }
+
+    .register-text {
+        text-align: center;      /* Center heading & paragraph */
+        transform: translateY(0); /* Remove previous translate */
+    }
+
+    .register-text h1 {
+        font-size: 30px;        /* Smaller heading for mobile */
+    }
+
+    .register-text p {
+        max-width: 90%;         /* Let paragraph take most of the width */
+        font-size: 14px;        /* More readable on mobile */
+    }
+
+    .register-card {
+        width: 90%;             /* Card almost full width on mobile */
+        padding: 30px;          /* Adjust padding for smaller screens */
+    }
+
+    .form-row {
+        flex-direction: column; /* Stack inputs vertically if needed */
+        gap: 15px;              /* Reduce gap between inputs */
+    }
+
+    .form-btn {
+        width: 100%;
+        margin-top: 15px;
+    }
+}

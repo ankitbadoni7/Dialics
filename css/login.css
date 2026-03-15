@@ -114,3 +114,31 @@
     font-family: var(--font-body);
     font-weight: 500;
 }
+
+@media (max-width:850px) {
+    .verify-wrapper {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;    /* Center everything horizontally */
+        gap: 40px;              /* Space between text and card */
+    }
+
+    .verify-text {
+        text-align: center;      /* Center heading & paragraph */
+        transform: translateY(0); /* Remove previous translate if any */
+    }
+
+    .verify-text h1 {
+        font-size: 40px;        /* Slightly smaller for mobile */
+    }
+
+    .verify-text p {
+        max-width: 100%;         /* Allow paragraph to take more width */
+        font-size: 14px;        /* Slightly bigger for readability */
+    }
+
+    .verify-card {
+        width: 90%;             /* Card takes almost full width */
+        margin-right: 0;        /* Remove margin when stacked */
+        padding: 40px 30px;     /* Adjust padding for smaller screens */
+    }
+}
