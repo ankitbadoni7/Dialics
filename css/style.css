@@ -1453,6 +1453,253 @@ opacity: 1;
     background:#F6F6F6;
 }
 
+
+
+.hero {
+    padding: 20px 20px 0;
+}
+
+
+.hero h1 {
+    font-size: 30px;
+}
+
+
+.hero p {
+    font-size: 12px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+
+/* ================= HERO IMAGE ================= */
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* Image */
+.hero-image img {
+    width: 100%;
+    max-width: 950px;
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+    border: 10px solid #ada6a65d;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* Common Glow Style */
+.glow {
+    position: absolute;
+    z-index: 0;
+    filter: blur(50px);
+    pointer-events: none;
+   
+}
+
+/* Top Glow */
+.glow-top {
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 55%;
+
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(229, 68, 114, 0.47) 0%,
+        rgba(229, 68, 114, 0) 100%
+    );
+}
+
+/* Left Glow */
+.glow-left {
+    top: 30%;
+    left: -90px;
+    transform: translateY(-50%);
+    width: 45%;
+    height: 75%;
+
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(229, 68, 114, 0.35) 0%,
+        rgba(229, 68, 114, 0) 100%
+    );
+}
+
+/* Right Glow */
+.glow-right {
+    top: 30%;
+    right: -90px;
+    transform: translateY(-50%);
+    width: 45%;
+    height: 75%;
+
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(229, 68, 114, 0.35) 0%,
+        rgba(229, 68, 114, 0) 100%
+    );
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 250px;
+
+   background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 10%,
+    rgba(247,247,249,0.6) 50%,
+    #F7F7F9 70%
+);
+    border-radius: 30px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.features-detail{
+    margin-top:0;
+      padding: 10px 0;
+}
+
+.section-heading {
+
+    font-size: 22px;
+    margin-bottom: 30px;
+ 
+}
+
+
+.detail-text p {
+    font-size: 12px;
+
+}
+  .desktop-break{
+        display:none;
+    }
+
+.steps-section {
+  padding: 10px  0;
+  border-radius: 70px;
+
+}
+
+
+/* Title */
+.section-title {
+  font-size: 24px;
+}
+
+
+.section-subtitle {
+  margin-bottom: 40px;
+}
+
+
+
+/* HOW IT WORKS */
+.steps-header {
+   
+    margin-bottom: 10px;
+}
+
+.steps-header h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.steps-timeline{
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+/* hide curve line */
+.timeline-path{
+    display:none;
+}
+
+/* reset absolute layout */
+.timeline-step{
+    position:relative;
+    width:100%;
+    left:unset;
+    top:unset;
+}
+
+/* reset desktop spacing */
+.step-one-content,
+.step-two-content,
+.step-three-content,
+.step-four-content{
+    padding-top:0;
+    transform:none;
+}
+
+.step-content{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px; 
+}
+
+.step-number-img{
+    position:relative;
+    width:55px;
+  
+}
+
+/* override desktop rule */
+.timeline-step .step-three-num{
+    width:65px;
+    top:0;
+}
+.step-four-num{
+    margin-bottom: 30px;
+}
+/* reset custom offsets */
+.step-one-num,
+.step-two-num,
+.step-three-num,
+.step-four-num{
+    top:0;
+    right:auto;
+    left:auto;
+}
+
+/* cloud icon */
+.cloud-wrapper{
+    margin-top:10px;
+}
+
+.step-one-cloud,
+.step-two-cloud,
+.step-three-cloud,
+.step-four-cloud{
+    margin:0;
+}
+
+.cloud-icon{
+    width:40px;
+}
+
+/* paragraph fix */
+.step-content p br{
+    display:none;
+}
+
     
 /* Features dropdown grid */
 .features-grid{
