@@ -1478,8 +1478,6 @@ opacity: 1;
 }
 
 
-
-
 .hero {
     padding: 20px 20px 0;
 }
@@ -1492,6 +1490,7 @@ opacity: 1;
 
 .hero p {
     font-size: 12px;
+    width: 300px;
 }
 
 .hero-buttons {
