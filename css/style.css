@@ -1376,15 +1376,10 @@ background-clip: text;
 
 /* ================= RESPONSIVE ================= */
 
-/* Small Mobile */
-@media (max-width:480px){
 
-/* show hamburger */
-.hamburger{
-    display:block;
-    order: 2;
-    cursor: pointer;
-}
+/* Small Mobile */
+@media (max-width:850px){
+
 
 /* hide desktop nav */
 .nav-links{
@@ -1410,8 +1405,7 @@ background-clip: text;
 }
 
 /* menu items */
-.nav-links ul li{
-    
+.nav-links ul li{ 
     padding:8px 0;
 }
 
@@ -1447,6 +1441,23 @@ background-clip: text;
     margin-left: -50px;
     cursor: pointer;
     }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .nav-container {
+        display: flex;
+        justify-content: space-between; /* Logo left, Actions group right */
+        align-items: center;
+    }
+
+    /* Actions group (Login + Hamburger) */
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px; 
+        margin-left: auto; 
+    }
 
 .dropdown-panel{
 opacity: 1;
@@ -1461,7 +1472,7 @@ opacity: 1;
     gap:20px; /* optional spacing */
 }
 
-/* Agar Resources aur Company bhi same chahiye */
+
 .resources-panel .features-grid,
 .company-panel .features-grid{
     grid-template-columns: repeat(2, 1fr);
@@ -1595,6 +1606,12 @@ opacity: 1;
 .detail-row{
     flex-direction:column;
     gap:30px;
+    align-items: center;
+    text-align: center;
+}
+.detail-row .detail-text {
+    max-width: 80%;       
+    text-align: justify; 
 }
 
 .detail-row.reversed{
@@ -1611,6 +1628,7 @@ opacity: 1;
     width:100%;
     max-width:100%;
 }
+
 
 
 .features-detail{
@@ -1870,26 +1888,6 @@ grid-template-columns:1fr;
 
 
 
-
-
-
-.footer-container{
-    grid-template-columns: 1fr;
-    gap:30px;
-    padding-left:20px;
-    padding-right:20px;
-}
-
-.bottom-flex{
-    flex-direction:column;
-    gap:10px;
-    text-align:center;
-}
-
-.footer-links a{
-    margin-left:10px;
-}
-
 /* ================= CTA SECTION ================= */
 /* Section padding */
 .cta-section{
@@ -1941,7 +1939,190 @@ grid-template-columns:1fr;
     filter:blur(40px);
     z-index:1;
 }
+
+
+
+ .footer-container {
+        display: block;
+    }
+
+    /* Footer newsletter stays full width */
+    .footer-newsletter {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Footer columns: 2 per row */
+    .footer-col {
+        width: 40%; /* 2 per row */
+        display: inline-block; /* make them flow */
+        vertical-align: top;
+        margin-bottom: 20px;
+        margin-right: 4%; /* gap between 2 columns */
+    }
+
+
+.bottom-flex{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+}
+
+.footer-links a{
+    margin-left:10px;
+}
+
 }
 
 
+/* Large desktop / widescreen */
+@media (min-width: 851px) and (max-width: 1143px) 
+{
 
+  .nav-actions .btn-outline,
+    .nav-actions .btn-primary {
+        display: none; 
+    }
+       .nav-actions .login {
+        display: inline-block; 
+         background: linear-gradient(
+        90deg,
+        hsl(271, 83%, 63%) 0%,
+        #FA7A77 50%,
+        #fe4a98 100%
+    );
+    opacity: 0.9;
+    color: #FFFFFF;
+     padding: 5px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-left: -50px;
+    cursor: pointer;
+    }
+
+/* HOW IT WORKS */
+
+.steps-header {
+    margin-bottom: 110px;
+}
+
+
+.timeline-path {
+display:none;
+
+}
+
+.timeline-step {
+    position: absolute;
+    z-index: 2;
+    width: 220px;
+}
+
+/* Individual Step Positioning */
+.step-one { top: 26%; left: 2%; }
+.step-two { top: -2%; left: 25%; }
+.step-three { top: 10%; left: 52%; }
+.step-four { top: -15%; left: 72%; }
+
+/* Content Wrapper */
+.step-content {
+    position: relative;
+    padding-top: 80px; 
+    display: flex;
+    flex-direction: column;
+}
+
+
+.step-one-num {
+    left: 68px; 
+}
+.step-one-content {
+    padding-top: 145px;
+}
+
+.step-one-cloud { 
+    margin-top: -270px;
+      margin-left: 65px; 
+}
+
+
+.step-number-img {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 60px;
+    z-index: -1;
+}
+
+
+.step-two-num {
+    right: 15px; 
+    top:20px;
+}
+
+.timeline-step .step-three-num {
+    width: 90px;
+    right: 5px; 
+    top: -19px;
+}
+.step-two-content{
+ transform: translateY(-65px);
+}
+.step-three-cloud { 
+    margin-top: -170px;
+      margin-left: 4px; 
+}
+.step-three-content {
+    padding-top: 85px;
+}
+
+.step-four-content {
+    padding-top: 100px;
+    transform: translateX(45px);
+}
+.step-four-num {
+    position: absolute;
+    right: 60px; 
+    top: 25px;
+}
+.step-four-cloud { 
+    margin-top: -160px;
+      margin-left: 10px; 
+}
+
+.cloud-icon {
+    width: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-left: -6px;
+}
+
+/* Typography */
+.step-content h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+.step-content p br{
+    display: none;
+}
+
+.step-content p {
+    font-size: 10px;
+    color: #666;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.step-tag {
+    display: block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fa7a77;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+}

@@ -12,7 +12,7 @@ dropdowns.forEach(drop => {
 
     drop.addEventListener('mouseenter', () => {
 
-        if (window.innerWidth <= 480) return;
+        if (window.innerWidth <= 768) return;
 
         clearTimeout(timer);
 
@@ -25,7 +25,7 @@ dropdowns.forEach(drop => {
 
     drop.addEventListener('mouseleave', () => {
 
-        if (window.innerWidth <= 480) return;
+        if (window.innerWidth <= 768) return;
 
         timer = setTimeout(() => {
 
@@ -66,7 +66,7 @@ hamburger.addEventListener('click', (e) => {
     navLinks.classList.toggle('active');
     e.stopPropagation();
 
-    if (navLinks.classList.contains("active") && window.innerWidth <= 480) {
+    if (navLinks.classList.contains("active") && window.innerWidth <= 768) {
         resetMobileMenu();
     }
 
@@ -98,7 +98,7 @@ dropdownItems.forEach(item => {
 
     link.addEventListener("click", (e) => {
 
-        if (window.innerWidth > 480 || !panel) return;
+        if (window.innerWidth > 768 || !panel) return;
 
         e.preventDefault();
         e.stopPropagation();
@@ -180,7 +180,7 @@ function closeAllPanels() {
 
 function resetMobileMenu() {
 
-    if (window.innerWidth > 480) return;
+    if (window.innerWidth > 768) return;
 
     closeAllPanels();
 
