@@ -1612,7 +1612,8 @@ opacity: 1;
 }
 
 .detail-row .detail-text {
-    max-width: 90%;         
+    max-width: 90%;     
+    margin-bottom: 20px;    
 }
 
 .detail-row .detail-text h3 {
@@ -1629,7 +1630,7 @@ opacity: 1;
 .detail-image{
     width:100%;
     max-width:100%;
-    margin-top: 25px;
+   
 }
 
 .detail-image img{
