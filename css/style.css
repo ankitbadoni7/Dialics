@@ -1978,17 +1978,17 @@ grid-template-columns:1fr;
 
     /* Footer newsletter stays full width */
     .footer-newsletter {
-        width: 100%;
+        width: 90%;
         margin-bottom: 20px;
     }
 
     /* Footer columns: 2 per row */
     .footer-col {
-        width: 40%; /* 2 per row */
-        display: inline-block; /* make them flow */
+        width: 40%; 
+        display: inline-block; 
         vertical-align: top;
         margin-bottom: 20px;
-        margin-right: 4%; /* gap between 2 columns */
+        margin-right: 8%; 
     }
 
 
