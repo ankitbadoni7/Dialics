@@ -1478,7 +1478,7 @@ opacity: 1;
 }
 .feature-item{
     padding:6px 0;
-    border-bottom:1px solid #e5e5e5;
+    border-bottom:1px solid #d3cfcf;
     width:100%;
 }
 
@@ -1486,15 +1486,18 @@ opacity: 1;
     border-bottom:none;
 }
 .panel-title {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     
 }
 
 
 .resources-panel .features-grid,
 .company-panel .features-grid{
-    grid-template-columns: repeat(2, 1fr);
+   display: flex;
+   flex-direction: column;
+   row-gap: 10px;
 }
+
 
 .mobile-back{
     display:flex;
