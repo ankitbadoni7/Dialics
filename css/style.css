@@ -1468,8 +1468,26 @@ opacity: 1;
 
 /* Features dropdown grid */
 .features-grid{
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap:20px; /* optional spacing */
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    margin-bottom: 20px;
+}
+.feature-item p{
+    display:none;
+}
+.feature-item{
+    padding:6px 0;
+    border-bottom:1px solid #e5e5e5;
+    width:100%;
+}
+
+.feature-item:last-child{
+    border-bottom:none;
+}
+.panel-title {
+    margin-bottom: 30px;
+    
 }
 
 
