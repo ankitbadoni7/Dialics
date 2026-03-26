@@ -1875,38 +1875,22 @@ opacity: 1;
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-
-    gap: 0;
-    padding: 0;
-}
-
-.blog-card{
-    flex: 0 0 100%;
-    min-width: 100%;
-    scroll-snap-align: start;
-}
-.blog-container{
-    scroll-padding-left: 16px;
-}
-.blog-container{
-    justify-content: flex-start;
-}
-.blog-container::-webkit-scrollbar{
-    display: none;
-}
-.blog-container{
-    padding: 0 16px;
+      padding: 0 16px;
     gap: 16px;
-    scroll-padding-left: 16px;
-    scroll-padding-right: 16px;
+       justify-content: flex-start;
+  
 }
 
 .blog-card{
     flex: 0 0 calc(100% - 16px);
     min-width: calc(100% - 16px);
 }
+
+
+.blog-container::-webkit-scrollbar{
+    display: none;
+}
+
 
 .blog-title{
     font-size:28px;

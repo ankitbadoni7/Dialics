@@ -275,14 +275,15 @@ document.addEventListener("DOMContentLoaded", function () {
     enableInfiniteSwipe(".bottom-row-wrapper", ".bottom-row");
 });
 
-//blog section mobile
+
+// ================= BLOG SECTION MOBILE (SMOOTH FIX ONLY) =================
 
 const container = document.querySelector('.blog-container');
 const cards = document.querySelectorAll('.blog-card');
 const dots = document.querySelectorAll('.dot');
 
 let index = 0;
-let isScrolling = false;
+let isSnapping = false;
 
 // update dots
 function updateDots(i){
@@ -290,35 +291,58 @@ function updateDots(i){
     if(dots[i]) dots[i].classList.add('active');
 }
 
-// scroll to card
+// smooth scroll helper
 function goToCard(i){
+    if (!container) return;
+
+    const cardWidth = container.clientWidth;
+
     container.scrollTo({
-        left: i * container.clientWidth,
+        left: i * cardWidth,
         behavior: 'smooth'
     });
+
     updateDots(i);
 }
 
-// detect scroll end (IMPORTANT)
-container.addEventListener('scroll', () => {
-    if(isScrolling) return;
+// debounce scroll end detection
+let scrollTimeout;
 
-    clearTimeout(container._t);
-    container._t = setTimeout(() => {
-        index = Math.round(container.scrollLeft / container.clientWidth);
+container.addEventListener('scroll', () => {
+    if (isSnapping) return;
+
+    clearTimeout(scrollTimeout);
+
+    scrollTimeout = setTimeout(() => {
+        const cardWidth = container.clientWidth;
+
+        index = Math.round(container.scrollLeft / cardWidth);
         updateDots(index);
-    }, 80);
+    }, 100);
 });
 
-// disable fast swipe skipping
+// prevent jitter snap spam
 container.addEventListener('touchend', () => {
-    isScrolling = true;
+    if (!container) return;
+
+    isSnapping = true;
 
     setTimeout(() => {
-        index = Math.round(container.scrollLeft / container.clientWidth);
-        goToCard(index);
-        isScrolling = false;
-    }, 120);
+        const cardWidth = container.clientWidth;
+
+        index = Math.round(container.scrollLeft / cardWidth);
+
+        container.scrollTo({
+            left: index * cardWidth,
+            behavior: 'smooth'
+        });
+
+        updateDots(index);
+
+        setTimeout(() => {
+            isSnapping = false;
+        }, 200);
+    }, 80);
 });
 
 // dots click
