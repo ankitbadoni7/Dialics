@@ -274,3 +274,57 @@ document.addEventListener("DOMContentLoaded", function () {
     enableInfiniteSwipe(".top-row-wrapper", ".top-row");
     enableInfiniteSwipe(".bottom-row-wrapper", ".bottom-row");
 });
+
+//blog section mobile
+
+const container = document.querySelector('.blog-container');
+const cards = document.querySelectorAll('.blog-card');
+const dots = document.querySelectorAll('.dot');
+
+let index = 0;
+let isScrolling = false;
+
+// update dots
+function updateDots(i){
+    dots.forEach(dot => dot.classList.remove('active'));
+    if(dots[i]) dots[i].classList.add('active');
+}
+
+// scroll to card
+function goToCard(i){
+    container.scrollTo({
+        left: i * container.clientWidth,
+        behavior: 'smooth'
+    });
+    updateDots(i);
+}
+
+// detect scroll end (IMPORTANT)
+container.addEventListener('scroll', () => {
+    if(isScrolling) return;
+
+    clearTimeout(container._t);
+    container._t = setTimeout(() => {
+        index = Math.round(container.scrollLeft / container.clientWidth);
+        updateDots(index);
+    }, 80);
+});
+
+// disable fast swipe skipping
+container.addEventListener('touchend', () => {
+    isScrolling = true;
+
+    setTimeout(() => {
+        index = Math.round(container.scrollLeft / container.clientWidth);
+        goToCard(index);
+        isScrolling = false;
+    }, 120);
+});
+
+// dots click
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+        index = i;
+        goToCard(i);
+    });
+});
