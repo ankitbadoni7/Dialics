@@ -1876,9 +1876,9 @@ opacity: 1;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
+      
     overscroll-behavior-x: contain;
-    touch-action: pan-x;
+    touch-action: pan-y;
     gap: 16px;
     padding: 0 16px;
     justify-content: flex-start;
