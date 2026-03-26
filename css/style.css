@@ -176,6 +176,7 @@ body {
     height: 2px;
     background: #ff7a77;
     margin-top: 4px;
+    
 }
 
 .feature-item p {
@@ -766,6 +767,7 @@ background-clip: text;
 }
 
 
+
 /* ================= REVIEW SECTION ================= */
 .testimonials {
     padding: 50px 0;
@@ -854,13 +856,6 @@ background-clip: text;
     right: 0;
     background: linear-gradient(to left, white 10%, rgba(255,255,255,0));
 }
-.bottom-row {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-}
-
 
 .testimonial-text{
     font-size:12px;
@@ -899,6 +894,7 @@ background-clip: text;
     letter-spacing: 3px;
     line-height: 1.2;
 }
+
 
 /* ================= BLOG SECTION ================= */
 .blog-section {
@@ -1489,6 +1485,13 @@ opacity: 1;
     margin-bottom: 40px;
     
 }
+.feature-item h4::after {
+   display: none;
+    
+}
+.feature-item h4{
+    margin-top: 5px;
+}
 
 
 .resources-panel .features-grid,
@@ -1805,56 +1808,65 @@ opacity: 1;
 }
 
 /* ================= REVIEW SECTION ================= */
+.testimonial-grid .top-row-wrapper,
+    .testimonial-grid .bottom-row-wrapper {
+        overflow: hidden;
+        width: 100%;
+    }
 
-.testimonials-title{
-    font-size:24px;
+    .testimonial-grid .top-row,
+    .testimonial-grid .bottom-row {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .testimonial-grid .top-row .testimonial-card,
+    .testimonial-grid .bottom-row .testimonial-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        margin: 0;
+    }
+
+  .top-row, .bottom-row {
+        display: flex;
+        width: 100%; /* Slider wrapper ke hisab se */
+        transition: transform 0.4s ease-out;
+    }
+
+    
+    .bottom-row {
+    width: 100%;
+    position: relative;
+    left: 0;
+    transform: none;
+    display: flex;
+    gap: 0;
 }
 
-.testimonials-subtitle{
-    font-size:10px;
-    margin-bottom:10px;
-}
-
-.testimonial-grid{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-.top-row,
-.bottom-row{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:20px;
-    width:100%;
-}
-
-.testimonial-card{
-    width:90%;
-    flex:none;
-    padding:25px;
-}
-
-.testimonials::before,
-.testimonials::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 15%; /* Side fade width */
-    z-index: 2;
-    pointer-events: none;
-}
+    .testimonial-card {
+        flex: 0 0 100%; /* Full width cards loop ke liye sabse best hain */
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+  
 
 
 
-.testimonial-text{
-    font-size:12px;
-}
+
+.top-row br,
 .bottom-row br{
     display: none;
 }
+.testimonials::before,
+.testimonials::after {
+   display: none;
+}
+
 .blog-section { padding: 20px 0;
  }
 

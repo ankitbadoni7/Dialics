@@ -189,3 +189,88 @@ function resetMobileMenu() {
     });
 
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // 🚀 GLOBAL CHECK FIRST (VERY IMPORTANT)
+    if (window.innerWidth > 850) return;
+
+    function enableInfiniteSwipe(wrapperSelector, rowSelector) {
+
+        const wrapper = document.querySelector(wrapperSelector);
+        const slider = document.querySelector(rowSelector);
+        if (!wrapper || !slider) return;
+
+        const originalCards = Array.from(slider.children);
+        const cardCount = originalCards.length;
+
+        // Clone cards for looping
+        const firstClone = originalCards[0].cloneNode(true);
+        const lastClone = originalCards[cardCount - 1].cloneNode(true);
+
+        slider.appendChild(firstClone);
+        slider.insertBefore(lastClone, slider.firstChild);
+
+        let currentIndex = 1;
+        let isDragging = false;
+        let startX = 0;
+        let isTransitioning = false;
+
+        const updatePosition = (animate = true) => {
+            const slideWidth = wrapper.clientWidth;
+            slider.style.transition = animate ? "transform 0.4s ease-out" : "none";
+            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        };
+
+        updatePosition(false);
+
+        slider.addEventListener('transitionend', () => {
+            isTransitioning = false;
+
+            if (currentIndex === 0) {
+                currentIndex = cardCount;
+                updatePosition(false);
+            } 
+            else if (currentIndex === cardCount + 1) {
+                currentIndex = 1;
+                updatePosition(false);
+            }
+        });
+
+        wrapper.addEventListener("touchstart", (e) => {
+            if (isTransitioning) return;
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        wrapper.addEventListener("touchmove", (e) => {
+            if (!isDragging || isTransitioning) return;
+
+            let currentX = e.touches[0].clientX;
+            let diff = startX - currentX;
+
+            if (Math.abs(diff) > 50) {
+                isTransitioning = true;
+
+                if (diff > 0) currentIndex++;
+                else currentIndex--;
+
+                updatePosition(true);
+                isDragging = false;
+            }
+        });
+
+        wrapper.addEventListener("touchend", () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 850) return;
+            updatePosition(false);
+        });
+    }
+
+    enableInfiniteSwipe(".top-row-wrapper", ".top-row");
+    enableInfiniteSwipe(".bottom-row-wrapper", ".bottom-row");
+});
