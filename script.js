@@ -190,6 +190,7 @@ function resetMobileMenu() {
 
 }
 
+//review section mob
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -283,59 +284,46 @@ const dots = document.querySelectorAll('.dot');
 let index = 0;
 let isScrolling = false;
 
-// dots update
+// update dots
 function updateDots(i){
     dots.forEach(d => d.classList.remove('active'));
     if(dots[i]) dots[i].classList.add('active');
 }
 
-// HARD SNAP FUNCTION (IMPORTANT FIX)
-function snapTo(i){
-    const width = container.clientWidth;
-
-    container.scrollTo({
-        left: i * width,
-        behavior: 'smooth'
-    });
-
-    updateDots(i);
-}
-
-// detect active index on scroll stop
-let timer;
-
+// detect scroll end properly
 container.addEventListener('scroll', () => {
-    if (isScrolling) return;
 
-    clearTimeout(timer);
+    if(isScrolling) return;
 
-    timer = setTimeout(() => {
+    clearTimeout(container.timer);
+
+    container.timer = setTimeout(() => {
         const width = container.clientWidth;
+
         index = Math.round(container.scrollLeft / width);
         updateDots(index);
-    }, 120);
+    }, 80);
 });
 
-// fix touch swipe ending properly
-container.addEventListener('touchend', () => {
-    isScrolling = true;
+// dot click = smooth snap
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
 
-    setTimeout(() => {
         const width = container.clientWidth;
-        index = Math.round(container.scrollLeft / width);
 
-        snapTo(index);
+        isScrolling = true;
+
+        container.scrollTo({
+            left: i * width,
+            behavior: 'smooth'
+        });
+
+        index = i;
+        updateDots(i);
 
         setTimeout(() => {
             isScrolling = false;
-        }, 300);
-    }, 50);
-});
+        }, 400);
 
-// dots click
-dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-        index = i;
-        snapTo(i);
     });
 });

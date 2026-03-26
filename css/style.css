@@ -1871,22 +1871,23 @@ opacity: 1;
 .blog-section { padding: 20px 0;
  }
 
-.blog-container{
+.blog-container {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
-      padding: 0 16px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
     gap: 16px;
-       justify-content: flex-start;
-  
-}
-
-.blog-card{
-    flex: 0 0 calc(100% - 16px);
-    min-width: calc(100% - 16px);
+    padding: 0 16px;
+    justify-content: flex-start;
 }
 
 
+.blog-card {
+    flex: 0 0 100%;  
+    min-width: 100%;
+    scroll-snap-align: center;
+}
 .blog-container::-webkit-scrollbar{
     display: none;
 }
