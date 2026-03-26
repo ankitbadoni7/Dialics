@@ -191,7 +191,6 @@ function resetMobileMenu() {
 }
 
 //review section mob
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // 🚀 GLOBAL CHECK FIRST (VERY IMPORTANT)
@@ -326,4 +325,9 @@ dots.forEach((dot, i) => {
         }, 400);
 
     });
+});
+window.addEventListener('load', () => {
+    const width = container.clientWidth;
+    index = Math.round(container.scrollLeft / width);
+    updateDots(index);
 });
