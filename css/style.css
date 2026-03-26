@@ -1876,12 +1876,12 @@ opacity: 1;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    overscroll-behavior-x: contain;
-    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
     gap: 16px;
     padding: 0 16px;
     justify-content: flex-start;
 }
+
 
 
 .blog-card {
