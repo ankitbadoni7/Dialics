@@ -277,78 +277,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // ================= BLOG SECTION MOBILE (SMOOTH FIX ONLY) =================
-
 const container = document.querySelector('.blog-container');
-const cards = document.querySelectorAll('.blog-card');
 const dots = document.querySelectorAll('.dot');
 
 let index = 0;
-let isSnapping = false;
+let isScrolling = false;
 
-// update dots
+// dots update
 function updateDots(i){
-    dots.forEach(dot => dot.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
     if(dots[i]) dots[i].classList.add('active');
 }
 
-// smooth scroll helper
-function goToCard(i){
-    if (!container) return;
-
-    const cardWidth = container.clientWidth;
+// HARD SNAP FUNCTION (IMPORTANT FIX)
+function snapTo(i){
+    const width = container.clientWidth;
 
     container.scrollTo({
-        left: i * cardWidth,
+        left: i * width,
         behavior: 'smooth'
     });
 
     updateDots(i);
 }
 
-// debounce scroll end detection
-let scrollTimeout;
+// detect active index on scroll stop
+let timer;
 
 container.addEventListener('scroll', () => {
-    if (isSnapping) return;
+    if (isScrolling) return;
 
-    clearTimeout(scrollTimeout);
+    clearTimeout(timer);
 
-    scrollTimeout = setTimeout(() => {
-        const cardWidth = container.clientWidth;
-
-        index = Math.round(container.scrollLeft / cardWidth);
+    timer = setTimeout(() => {
+        const width = container.clientWidth;
+        index = Math.round(container.scrollLeft / width);
         updateDots(index);
-    }, 100);
+    }, 120);
 });
 
-// prevent jitter snap spam
+// fix touch swipe ending properly
 container.addEventListener('touchend', () => {
-    if (!container) return;
-
-    isSnapping = true;
+    isScrolling = true;
 
     setTimeout(() => {
-        const cardWidth = container.clientWidth;
+        const width = container.clientWidth;
+        index = Math.round(container.scrollLeft / width);
 
-        index = Math.round(container.scrollLeft / cardWidth);
-
-        container.scrollTo({
-            left: index * cardWidth,
-            behavior: 'smooth'
-        });
-
-        updateDots(index);
+        snapTo(index);
 
         setTimeout(() => {
-            isSnapping = false;
-        }, 200);
-    }, 80);
+            isScrolling = false;
+        }, 300);
+    }, 50);
 });
 
 // dots click
 dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
         index = i;
-        goToCard(i);
+        snapTo(i);
     });
 });
